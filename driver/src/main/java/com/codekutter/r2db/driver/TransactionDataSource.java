@@ -9,7 +9,6 @@ import lombok.experimental.Accessors;
 @Setter
 @Accessors(fluent = true)
 public abstract class TransactionDataSource<C, T> extends AbstractDataSource<C> {
-    @Setter(AccessLevel.NONE)
     private T transaction;
 
     public abstract void beingTransaction() throws DataSourceException;

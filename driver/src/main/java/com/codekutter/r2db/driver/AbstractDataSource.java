@@ -34,10 +34,10 @@ public abstract class AbstractDataSource<T> implements IConfigurable {
     }
 
     @SuppressWarnings("rawtypes")
-    public abstract <E extends IEntity> E create(@NonNull E entity) throws DataSourceException;
+    public abstract <E extends IEntity> E create(@NonNull E entity, @NonNull Class<? extends IEntity> type) throws DataSourceException;
 
     @SuppressWarnings("rawtypes")
-    public abstract <E extends IEntity> E update(@NonNull E entity) throws DataSourceException;
+    public abstract <E extends IEntity> E update(@NonNull E entity, @NonNull Class<? extends IEntity> type) throws DataSourceException;
 
     @SuppressWarnings("rawtypes")
     public abstract <E extends IEntity> boolean delete(@NonNull Object key, @NonNull Class<? extends E> type) throws DataSourceException;
